@@ -1,0 +1,11 @@
+Yars::Client (Yet Another RESTful-Archive Service Client)
+
+To install :
+
+    perl Build.PL
+    ./Build
+    ./Build test
+    ./Build install
+
+Please see the pod for documentation.
+
