@@ -1,5 +1,8 @@
 package Yars::Client;
 
+# ABSTRACT: Yet Another RESTful-Archive Service Client
+our $VERSION = '0.82'; # VERSION
+
 use strict;
 use warnings;
 
@@ -17,8 +20,6 @@ use Digest::file qw/digest_file_hex/;
 use Data::Dumper;
 use IO::Uncompress::Gunzip qw(gunzip $GunzipError);
 use 5.10.0;
-
-our $VERSION = '0.81';
 
 # default max of 10 GB
 $ENV{MOJO_MAX_MESSAGE_SIZE} ||= 1024*1024*1024 * 10;
@@ -411,9 +412,15 @@ sub remote {
 
 __END__
 
+=pod
+
 =head1 NAME
 
-Yars::Client -- Yet Another RESTful-Archive Service Client
+Yars::Client - Yet Another RESTful-Archive Service Client
+
+=head1 VERSION
+
+version 0.82
 
 =head1 SYNOPSIS
 
@@ -460,12 +467,23 @@ Yars::Client -- Yet Another RESTful-Archive Service Client
      { filename => $f1, md5 => $m1 },
      { filename => $f2, md5 => $m2 } ] });
 
-
 =head1 DESCRIPTION
 
 Client for L<Yars>.
 
 =head1 SEE ALSO
 
- L<yarsclient>
- L<Clustericious::Client>
+L<yarsclient>, L<Clustericious::Client>
+
+=head1 AUTHOR
+
+Graham Ollis <plicease@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by NASA GSFC.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
